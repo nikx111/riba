@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shore Fishing Spot Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD83nZTtYAzjpk8oYakzjeLww2iO5buph0&callback=initMap" async defer></script>
+    <script src="script.js?apiKey=385ab843e31a9f9df599012cd79fe930" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Find the Best Shore Fishing Spot</h2>
+        <div class="form-group">
+            <label for="fishSelect">Select Fish:</label>
+            <select id="fishSelect" class="form-control">
+                <option value="bass">Bass</option>
+                <option value="pike">Pike</option>
+                <option value="carp">Carp</option>
+                <option value="trout">Trout</option>
+                <option value="salmon">Salmon</option>
+            </select>
+            <button onclick="fetchFishingSpots()">Find Spots</button>
+        </div>
+        <div class="form-group">
+            <label for="locationInput">Enter Location:</label>
+            <input type="text" id="locationInput" class="form-control" placeholder="e.g., Sofia, Bulgaria">
+            <button onclick="searchLocation()">Search Location</button>
+        </div>
+        <div id="map"></div>
+        <div id="weatherInfo" class="weather-info"></div>
+    </div>
+</body>
+</html>
